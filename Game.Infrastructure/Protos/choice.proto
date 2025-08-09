@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "ChoiceService";
+
+import "google/protobuf/empty.proto";
+
+package choice;
+
+
+service Choice {
+  rpc GetRandomChoice (google.protobuf.Empty) returns (ChoiceResponse);
+}
+
+message ChoiceResponse {
+  int32 id = 1;
+  string name = 2;
+}
